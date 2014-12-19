@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>New Tab</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+    <body class="container-clip cover relative">
+        <!-- 500px photo and a copy for blur effect -->
+        <img src="" alt="" class="px500-img cover fixed left top">
+        <img src="" alt="" class="px500-img cover blur-mask fixed left top">
+        <!-- action bar -->
+        <div class="menu absolute top right text-white ptb plr-lg flex-column">
+            <span class="menu-item px500-setting-btn text-white pointer fa fa-2x fa-ellipsis-h"></span>
+            <span class="menu-item px500-tack-btn pointer mt fa fa-2x fa-thumb-tack" data-type="tooltip" data-content="" data-placement="left"></span> 
+        </div>
+        <!-- setting page -->
+        <div class="container-clip relative fragment-container cover absolute top left">
+            <section class="px500-setting-panel container-clip absolute left top cover flex-column center">
+                <h1 class="text-white ptb plr-extra bb">What To Show</h1>
+                <div class="features flex-column center">
+                    <h3 class="text-white">photo stream?</h3>
+                    <div>
+                        <span class="feature label label-primary" data-feature="popular">popular</span>
+                        <span class="feature label label-primary" data-feature="highest_rated">highest rated</span>
+                        <span class="feature label label-primary" data-feature="upcoming">upcoming</span>
+                    </div>
+                    <div class="mt">
+                        <span class="feature label label-primary" data-feature="editors">editors's choice</span>
+                        <span class="feature label label-primary" data-feature="fresh_today">fresh today</span>
+                        <span class="feature label label-primary" data-feature="fresh_yesterday">fresh yesterday</span>
+                        <span class="feature label label-primary" data-feature="fresh_week">fresh week</span>
+                    </div>
+                    <div class="mt-lg flex-column center">
+                        <h3 class="text-white mb-sm mt-extra">or for more specific: tag | keyword</h3>
+                        <input type="text" class="term-input text-center" placeholder="e.g. lake,travel,landscapes...">
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="px500-panel absolute left top cover">
+            <!-- 500px photo metas -->
+            <div class="pic-metas cover">
+    
+
+                <div class="text-center full-row pic-title-wrapper"><a href="" class="metas-focus ptb plr pic-title nudl text-white"></a></div>
+                <figure class="text-white fixed metas-focus left bottom mb pic-description-wrapper">
+                    <blockquote class="hide pic-description"></blockquote>
+                    <figcaption class="quote-by ptb">
+                        <a href="" class="pic-user hide text-white nudl"></a>
+                    </figcaption>
+            </figure>
+        </div>
+    </section>
+    <script src="bower_components/requirejs/require.js" data-main="scripts/pages/index"></script>
+</body>
+</html>

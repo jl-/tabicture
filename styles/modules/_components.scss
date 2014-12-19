@@ -1,0 +1,442 @@
+/* components */
+
+/* nav group
+===================================*/
+.nav-group-h{
+    @extend .flex-row;
+    .nav-item{
+        @extend .flex-1;
+        padding: 4px;
+        &:nth-of-type(n+2){
+            border-left: 1px dashed #ccc;
+        }
+    }
+}
+.nav-group-v{
+    & .nav-item{
+        display: block;
+    }
+}
+.nav-item{
+    display: inline-block;
+    padding: 10px;
+    &:hover{
+        background-color: darken(bgc($color-schema),3%);
+    }
+}
+.nudl{
+    text-decoration: none;
+}
+.udl{
+    text-decoration: underline;
+}
+a.lb{
+    &:hover{
+        background-color: $a-c;
+        color: white;
+        border-left: 4px solid #555;
+    }
+}
+
+.nav-item.active{
+    @extend .nav-item:hover;
+}
+
+/* actionbar
+======================================= */
+.actionbar{
+    height: $actionbar-height;
+    background-color: bgc($color-schema);
+    overflow: hidden;
+    z-index: 10;
+}
+.actionbar .action{
+    line-height: $actionbar-height;
+    height: $actionbar-height;
+    padding-top:0;
+    padding-bottom: 0;
+}
+
+.brand{
+    @extend .action;
+    font-size: 1.8em;
+}
+.actionbar .item{
+    @extend .nav-item;
+    @extend .action;
+}
+
+.actionbar + .body{
+    height: calc(100% - #{$actionbar-height});
+    position: relative;
+    background-color: darken( bgc($color-schema),2%);
+}
+.actionbar.fixed + .body , .actionbar.absolute + .body{
+    padding-top: $actionbar-height;
+    @extend .full-column;
+}
+
+
+
+
+/* site footer
+=================================== */
+.site-footer{
+    border-top: 1px dashed $light-grey;
+    padding: 10px;
+}
+
+/* form style
+================================== */
+input.ng-invalid.ng-dirty{
+    border-color: red;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px lighten(red,32%);
+}
+.form-control-feedback{
+    position:absolute;
+    top: 0;
+    color: red;
+}
+
+
+/* tooltip
+======================================*/
+.tooltip{
+    word-wrap: break-word;
+}
+
+
+
+/* avatar
+=======================================*/
+.avatar{
+    @include size(80px);
+    box-shadow: 0 0 8px lighten(bgc($color-schema),20%);
+}
+.avatar-lg{
+    @include size(120px);
+}
+.avatar-sm{
+    @include size(60px);
+}
+.avatar-extra-sm{
+    @include size(30px);
+}
+
+
+
+/* book
+===========================================*/
+.book{
+    @include size(100px,120px);
+    position: relative;
+    margin: 4px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(left, #559ad4 0%, #559ad4 1%, rgba(255,255,255,0) 3%), linear-gradient(-45deg, #52A5EA 0%,#3B8FD6 46%,#2A7DC2 90%,#3E97E4 100%);
+    border-radius: 8px 18px 18px 8px;
+    box-shadow:0px 2px 2px rgba(255, 255, 255, 0.3) inset, 0px 2px 0px #244f73, 0px 3px 0px #27567e, 0px 10px 40px #222;
+    box-shadow: 0 0 6px darken(c($color-schema),2%);
+    &::before,&::after{
+        content: "";
+        @extend .absolute;
+        left: 0;
+        @include size(2px,30px);
+        margin-left: -2px;
+        background: #b8cbdb;
+        border-right:1px solid #315c83;
+    }
+    &::before{
+        top: 20px;
+    }
+    &::after{
+        bottom: 20px;
+    }
+}
+.book .action{
+    @extend .absolute;
+    @extend .bottom;
+    cursor: pointer;
+    font-size: 20px;
+    color: $dark-white;
+    &:nth-of-type(1){
+        left: 10px;
+    }
+    &:nth-of-type(2){
+        right: 10px;
+    }
+}
+
+
+/* circle
+===============================*/
+.circle{
+    border-radius: 50%;
+}
+.circle-link{
+    @extend .circle;
+    cursor: pointer;
+    text-align: center;
+    @include color-transition($true-blue,darken($true-blue,2%),bgc($color-schema),darken(bgc($color-schema),6%));
+}
+
+/* checkbox component
+======================*/
+.check-component{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin: 0;
+    color: $a-c;
+    input{
+        -webkit-appearance: none;
+        @extend .absolute;
+        @extend .cover;
+        cursor: pointer;
+        margin: 0;
+        opacity: 0;
+        &:checked + i{
+            background-color: $true-blue;
+            color: white;
+            transform: scale(1.2);
+        }
+    }
+    i{
+        @include size(26px);
+        line-height: 26px;
+    }
+}
+
+/* tags wrapper
+=============*/
+.tags-wrapper{
+    padding: 8px;
+}
+.tag{
+    color: white;
+    display: inline-block;
+    background-color: $true-blue;
+    padding: 4px;
+    margin: 2px 4px;
+    line-height: 20px;
+    border-radius: 8px;  
+    &:hover{
+        color: $dark-white;
+    }
+    .remove{
+        cursor: pointer;
+        color: red;
+    }
+}
+
+/* form element
+================================*/
+.bare{
+    @extend %bare;
+}
+.bare-input{
+   @extend %bare; 
+   max-width: 100%;
+   padding: 4px 8px;
+   box-shadow: 0 0 6px;
+   &[disabled]{
+    box-shadow: none;
+   }
+}
+input[type="number"]{
+    width: 80px;
+}
+.bb{
+   border-bottom: 1px solid;
+}
+
+
+/* others
+===============================*/
+.inner-shadow{
+    box-shadow: 0 0 18px -8px inset;
+}
+
+/* mask
+================================*/
+.mask{
+    background-color: rgba(0,0,0,0.6);
+    overflow: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: -11;
+    transform: scale(0);
+    .alert-modal,.confirm-modal{
+        display: none;
+        position: relative;
+        margin: 0;
+        @extend .plr-lg;
+        @extend .ptb-lg;
+        border-radius: 6px;
+        background-color: white;
+    }
+    .alert-modal{
+        .alert-closer{
+            @include size(24px);
+            @extend .absolute;
+            right: -6px;
+            top: -6px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 50%;
+            @include color-transition(lighten(red,28%),red,white,$light-grey);
+            cursor: pointer;
+        }
+    }
+    .confirm-modal{
+        .footer{
+            @extend .mt-lg;
+            @extend .pt-lg;
+            border-top: 1px dashed #ccc;
+        }
+    }
+    &.alert,&.confirm,&.active{
+        z-index: 100;
+        opacity: 1;
+        transform:scale(1);
+    }
+    &.alert{
+        .alert-modal{
+            display: block;
+        }
+    }
+    &.confirm{
+        .confirm-modal{
+            display: block;
+        }
+    }
+}
+input.white,textarea.white{
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color:  white;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:  white;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:  white;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:  white;
+    }
+}
+
+
+
+
+/* quote
+=========================*/
+.quote {
+  font-size: 14px;
+}
+.curly-quotes {
+    @extend .plr-lg;
+    border: none;
+    @extend .mb-sm;
+    @extend .ptb;
+    &::before, &::after {
+        font-family: Georgia, serif;
+        display: inline-block;
+        vertical-align: top;
+        height: 30px;
+        line-height: 48px;
+        font-size: 50px;
+        opacity: .2;
+    }
+    &::before {
+        content: '\201C';
+        margin-right: 4px;
+        margin-left: -8px;
+    }
+    &::after {
+        content: '\201D';
+        margin-left: 4px;
+        margin-right: -8px;
+    }
+}
+.quote-by {
+  display: block;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 13px;
+  font-style: italic;
+  color: #84775c;
+}
+.lt-ie8 .notepaper { padding: 15px 25px; }
+/*   end of quote */
+
+
+/* flag
+===============*/
+.flag{
+    border-left: 4px solid;
+    @extend .pl-lg;
+}
+/* button 
+=================*/
+.btn.btn-bs{
+    box-shadow: 0 -2px #ccc inset; 
+}
+
+/* dividers 
+=====================*/
+.didver-rainbow{
+    @extend .full-row;
+    height: 1px;
+    background: linear-gradient(90deg, #3AC5C9, #94719A);
+}
+
+
+/* social link
+=========================*/
+.social-link{
+  display: block;
+  border: 1px solid white;
+  @include size(36px,36px);
+  line-height: 36px;
+  @extend .circle;
+  @extend .text-white;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  &::after{
+      content: "";
+      @extend .absolute;
+      @extend .top;
+      @extend .left;
+      @extend .cover;
+      @extend .circle;
+      display: block;
+      border: 1px solid white;
+      opacity: 1;
+      transition: transform .5s ease,opacity 0.5s ease;
+  }
+  &:hover{
+    @extend .text-white;
+    &::after{
+          transform: scale(1.5);
+          opacity: 0;
+    }
+  }
+}
+
+.bb{
+    border-bottom: 1px dashed;
+}
+
+/* tooltip
+======================*/
+.tooltip{
+    transition: opacity 0.3s ease 0.2s;
+    & > .tooltip-inner{
+        min-width: 150px;
+    }
+}
+.tooltip.active{
+    opacity: 1;
+}

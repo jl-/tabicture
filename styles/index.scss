@@ -1,0 +1,24 @@
+/* ------------------ config -------------------- */
+$color-schema: evening;
+
+
+/* ------------------ basic -------------------- */
+@import 'utils/_mixins.scss';
+@import 'utils/_functions.scss';
+@import 'configs/_colors.scss';
+@import 'configs/_variables.scss';
+
+
+@import 'utils/_placeholders.scss';
+
+@import 'layouts/_base.scss';
+
+@import 'modules/_common.scss';
+@import 'modules/_components.scss';
+
+
+@import 'layouts/_index.scss';
+
+
+
+@import 'modules/_animations.scss';

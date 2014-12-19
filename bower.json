@@ -1,0 +1,23 @@
+{
+  "name": "tabi",
+  "version": "0.0.0",
+  "authors": [
+    "jl- <i.dragonxx@gmail.com>"
+  ],
+  "description": "chrome extension for new tab",
+  "keywords": [
+    "chrome",
+    "extension",
+    "new tab"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "bootstrap": "~3.3.1",
+    "fontawesome": "~4.2.0",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.15",
+    "underscore": "~1.7.0",
+    "backbone": "~1.1.2"
+  }
+}

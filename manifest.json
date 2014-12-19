@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tabicture",
+  "description": "Chrome new tab extension, ",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "unlimitedStorage",
+    "alarms",
+    "chrome://favicon/",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons":{
+      "16": "assets/images/tabi16.png",
+      "48": "assets/images/tabi48.png"
+  },
+  "background": {
+    "page": "event.html",
+    "persistent": false
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'unsafe-eval' 'self' https://api.500px.com; object-src 'self'"
+
+
+}

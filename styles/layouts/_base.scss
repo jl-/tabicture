@@ -1,0 +1,11 @@
+html,body{
+    @extend .cover;
+}
+@font-face {
+    font-family: "bariol-regular";
+    src: url("../assets/fonts/bariol_regular/bariol-regular.eot");
+    src: url("../assets/fonts/bariol_regular/bariol-regular.eot?#iefix") format("embedded-opentype"),url("../assets/fonts/bariol_regular/bariol-regular.woff") format("woff"),url("../assets/fonts/bariol_regular/bariol-regular.ttf") format("truetype"),url("../assets/fonts/bariol_regular/bariol-regular.svg#bariol-regular") format("svg");
+}
+body{
+    font-family: "bariol-regular";
+}

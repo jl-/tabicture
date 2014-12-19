@@ -1,0 +1,218 @@
+/* common styles for components */
+img{
+    max-width: 100%;
+}
+hr{
+    border-top: 1px dashed;
+}
+code{
+    display: inline !important;
+}
+pre > code{
+    display: block !important;
+}
+.label{
+    padding: .3em .6em 0.2em;
+    font-size: 90%;
+}
+/* placeholder color
+=======================*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    /*color:  darken( c($color-schema), 2%);*/
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    /*color:  darken( c($color-schema), 2%);*/
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    /*color:  darken( c($color-schema), 2%);*/
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    /*color:  darken( c($color-schema), 2%);*/
+    color: white;
+}
+
+/* flexbox 
+==============================*/
+.flex-row{
+    @extend %flex-row;
+}
+.flex-column{
+    @extend %flex-column;
+}
+@for $i from 0 through 10{
+    .flex-#{$i}{
+        flex: $i;
+    }
+}
+.flex-row.start,.flex-column.start{
+    justify-content: flex-start;
+}
+.flex-row.end,.flex-column.end{
+    justify-content: flex-end;
+}
+.flex-row.around,.flex-column.around{
+    justify-content: space-around;
+}
+.flex-row.between,.flex-column.between{
+    justify-content: space-between;
+}
+.flex-row.center,.flex-column.center{
+    justify-content: center;
+}
+.flex-row.stretch,.flex-column.stretch{
+    align-items: stretch;
+}
+.flex-row.items-start,.flex-column.items-start{
+    align-items: flex-start;
+}
+.flex-row.content-start,.flex-column.content-start{
+    align-content: flex-start;
+}
+.flex-row.nowrap,.flex-column.nowrap{
+    flex-wrap: nowrap;
+}
+
+
+/* helper class 
+===============================*/
+.fixed{
+    position: fixed;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.fixed.left,.absolute.left{
+    left: 0;
+}
+.fixed.right,.absolute.right{
+    right: 0;
+}
+.fixed.full, .absolute.full{
+    left: 0;
+    right: 0;
+}
+.fixed.top,.absolute.top{
+    top: 0;
+}
+.fixed.bottom,.absolute.bottom{
+    bottom: 0;
+}
+.full-column{
+    height: 100%;
+}
+.full-row{
+    width: 100%;
+}
+.cover{
+    @extend .full-column;
+    @extend .full-row;
+}
+/* padding margin helper
+======================*/
+$size-value: (sm: 3px, md: 6px, lg: 12px, extra: 24px);
+$directions: (l: left, r: right, t: top, b: bottom);
+@each $size,$value in $size-value{
+    @each $ds,$df in $directions{
+        @if $size == md{
+            .p#{$ds}{
+                padding-#{$df}: $value;
+            }
+            .m#{$ds}{
+                margin-#{$df}: $value;
+            }
+        }@else{
+            .p#{$ds}-#{$size}{
+                padding-#{$df}: $value;
+            }
+            .m#{$ds}-#{$size}{
+                margin-#{$df}: $value;
+            }
+        }
+    }
+}
+@each $size,$value in $size-value{
+    @if $size == md{
+        .plr{
+            @extend .pl;
+            @extend .pr;
+        }
+        .ptb{
+            @extend .pt;
+            @extend .pb;
+        }
+        .mlr{
+            @extend .ml;
+            @extend .mr;
+        }
+        .mtb{
+            @extend .mt;
+            @extend .mb;
+        }
+    }@else{
+        .plr-#{$size}{
+            @extend .pl-#{$size};
+            @extend .pr-#{$size};
+        }
+        .ptb-#{$size}{
+            @extend .pt-#{$size};
+            @extend .pb-#{$size};
+        }
+        .mlr-#{$size}{
+            @extend .ml-#{$size};
+            @extend .mr-#{$size};
+        }
+        .mtb-#{$size}{
+            @extend .mt-#{$size};
+            @extend .mb-#{$size};
+        }
+    }
+}
+.transparent{
+    background-color: transparent;
+}
+
+.text-white{
+    color: white;
+}
+.bg-white{
+    background-color: white;
+}
+.pointer{
+    cursor: pointer;
+}
+.container-auto-x{
+    overflow-x: auto;
+}
+.container-auto-y{
+    overflow-y: auto;
+}
+.container-clip-x{
+    overflow-x: hidden;
+}
+.container-clip-y{
+    overflow-y: hidden;
+}
+.container-clip{
+    @extend .container-clip-x;
+    @extend .container-clip-y;
+}
+.container-auto{
+   @extend .container-auto-x ;
+   @extend .container-auto-y;
+}
+.inline-block{
+    display: inline-block !important;
+}
+
+@for $i from 0 through 10{
+    .w-#{$i}{
+        width: $i * 10%;
+    }
+}
+

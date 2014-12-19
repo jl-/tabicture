@@ -1,0 +1,15 @@
+@function c($schema){
+    @if map-get($color-schemas,$schema){
+        @return map-get($c,$schema);
+    } @else {
+        @return $true-blue;
+    }
+}
+
+@function bgc($schema){
+    @if map-get($color-schemas,$schema){
+        @return map-get($bgc,$schema);
+    } @else {
+        @return white;
+    }
+}

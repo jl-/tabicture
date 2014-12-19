@@ -1,0 +1,16 @@
+/* mixin utils
+=============================== */
+@mixin size($width,$height:$width){
+    width: $width;
+    height: $height;
+}
+
+@mixin color-transition($color:$a-c,$hover-color:$a-c,$bg-color:transparent,$bg-hover-color:transparent) {
+    transition: all 0.3s ease-in-out;
+    color: $color;
+    background-color: $bg-color;
+    &:hover{
+        color: $hover-color;
+        background-color: $bg-hover-color;
+    }
+}

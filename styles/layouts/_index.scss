@@ -1,0 +1,133 @@
+body {
+    /*background-image: url('../../assets/images/bg.jpg');*/
+    
+    background-size: cover;
+    background-position: center center;
+}
+/* background, 500px photo and a blurry copy
+=====================================*/
+
+.px500-img {
+    background-size: cover;
+    background-position: center center;
+}
+.blur-mask {
+    opacity: 0;
+    transition: all 0.8s ease;
+    -webkit-filter: blur(6px) grayscale(0.6);
+    &.show {
+        opacity: 1;
+    }
+}
+/* 500px photo metas
+====================================*/
+.px500-panel{
+    transition: transform 0.4s ease;
+    &.slide {
+        transform: translateX(-100%);
+    }
+    
+}
+.metas-focus {
+    transition: background-color 0.6s ease-in, transform 0.4s ease-in;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+    }
+}
+.pic-title-wrapper{
+    @extend .absolute;
+    @extend .left;
+    top: 200px;
+}
+.pic-title{
+    font-size: 60px;
+}
+.pic-description {
+    @extend .curly-quotes;
+    border: none;
+    margin-top: 10px;
+    max-width: 520px;
+    max-height: 360px;
+    @extend .container-auto;
+    &::before {
+        opacity: 0.6;
+    }
+    &::after {
+        display: none;
+    }
+}
+.pic-tags{
+   @extend .absolute;
+   @extend .bottom;
+   @extend .right; 
+   max-width: calc(100% - 560px);
+}
+.pic-tag {
+    margin-right: 12px;
+}
+/* actionbar
+=====================================*/
+.menu,
+.menu-item-wrapper{
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+.menu-item {
+    /*@extend .social-link;*/
+    transition: transform 0.4s ease,opacity 0.4s ease;
+    opacity: 0.6;
+    &:hover{
+        opacity: 1;
+    }
+    &.active{
+    }
+}
+.px500-tack-btn{
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+    &.tacked{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    &.untacked{
+        opacity: 0.1;
+        transform: rotate(90deg);
+    }
+}
+
+
+/* fragment-container
+======================================*/
+.fragment-container{
+    opacity: 0;
+    &.active{
+        opacity: 1;
+    }
+}
+
+/* 500px setting panel
+======================================*/
+.px500-setting-panel{
+    visibility: hidden;
+    &.bounceIn{
+        visibility: visible;
+    }
+}
+.features{
+}
+.feature{
+    @extend .pointer;
+    @extend .mlr;
+    font-size: 16px;
+    &.selected{
+        background-color: red;
+    }
+}
+.term-input{
+    @extend .bare;
+    font-size: 32px;
+    @extend .text-white;
+    width: 420px;
+}
+

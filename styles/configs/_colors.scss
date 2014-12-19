@@ -1,0 +1,46 @@
+$light-grey: #d9d9d9;
+$dark-grey: rgb(46,50,60);
+$azure: rgb(245,248,250);
+$dark-white: #f2f5f9;
+$light-blue: rgb(32,56,84);
+$morning-blue: rgb(229,242,247);
+$powder-blue: rgb(192,222,237);
+$oxford-blue: #152436;
+$baby-blue: rgb(142,193,218);
+$sky-blue: rgb(85,172,238);
+$true-blue: #428bca;
+$light-cyan: rgb(224,239,241);
+$pure-blue: rgb(0,172,237);
+$deep-blue: rgb(46,163,242);
+$paper-blue:rgb(82,179,217);
+$weak-blue: rgb(62,180,187);
+$facebook-blue: rgb(34,63,105);
+$facebook-blue: rgb(54,93,152);
+
+$lovely-green: rgb(27,188,155);
+$braight-green:rgb(52,200,73);
+$deep-green:rgb(74,196,86);
+
+
+$light-dark: rgb(14,21,27);
+$morning-dark: rgb(11,16,21);
+
+
+/* default color */
+$a-c: true-blue;
+
+/* color schema map */
+$color-schemas: ( light: light, dark:dark , warm: warm , evening: evening,twitter: twitter);
+$bgc: ( light: white, dark: $dark-grey, warm: $light-blue , evening: $oxford-blue, twitter: $baby-blue );
+$bgc-hover: ( light: $light-grey, dark: $dark-grey, warm: $light-blue , evening: $oxford-blue, twitter: $azure );
+$c: (light: $true-blue, dark: $true-blue , warm: $true-blue , evening: $true-blue, twitter: $pure-blue);
+$c-hover: (light: $true-blue, dark: $true-blue , warm: $true-blue , evening: $true-blue,twitter: $pure-blue);
+
+
+
+/*
+ body-bgc: $powder-blue;
+background-color: white;
+bgc-hover: $azure;
+ */
+
