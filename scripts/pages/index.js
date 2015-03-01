@@ -30,15 +30,8 @@ requirejs(['photoManager', 'underscore','Tooltip'], function(photoManager,  _, T
         photoManager = eventPage.photoManager || photoManager;
         var photoWithMetas = photoManager.get500px();
         if (!photoWithMetas.photo) {
-            photoWithMetas = {
-                photo: '../../assets/images/bg.jpg',
-                userPage: 'https://500px.com/g-les',
-                link: 'https://500px.com/photo/90731813/abstract-painting-by-gilles-baechler',
-                description: 'Aerial shot of the countryside around Fribourg during the fall season - Switzerland',
-                tags: 'abstract,colors,ountryside,fields'.split(','),
-                name: 'Abstract painting?',
-                username: 'Gilles Baechler'
-            };
+            photoManager.set500px();
+            photoWithMetas = photoManager.get500px();
         }
         displayPx500(photoWithMetas);
     });
