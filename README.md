@@ -5,9 +5,9 @@
 
 ### Usage
 
-- git clone git@github.com:jl-/tabicture.git
-- cd tabicture
-- bower install
+- `git clone git@github.com:jl-/tabicture.git`
+- `cd tabicture`
+- `bower install`
 - Open the URL chrome://extensions/ in your Chrome browser.
 - Check the box for Developer Mode
 - Click the button Load unpacked extension...
