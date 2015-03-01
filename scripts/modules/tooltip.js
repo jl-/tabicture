@@ -36,6 +36,9 @@ define(['underscore'],function(_){
                 case 'top':
                     break;
                 case 'right':
+                    pos.left = self.el.offsetLeft + self.el.offsetWidth + 'px';
+                    pos.top = self.el.offsetTop + self.el.offsetHeight / 2 - Tooltip.dom.offsetHeight / 2 + 'px';
+                    style = 'left:' + pos.left + ';top:' + pos.top;
                     break;
                 case 'bottom':
                     break;
@@ -45,7 +48,6 @@ define(['underscore'],function(_){
                     style = 'right:' + pos.right + '; top:' + pos.top;
                     break;
             }
-            console.log(pos);
             Tooltip.dom.style.cssText = style;
             Tooltip.dom.classList.add('active');
         });
@@ -74,7 +76,6 @@ define(['underscore'],function(_){
 
     Tooltip.init = function(){
         var tooltips = document.querySelectorAll('[data-type="tooltip"]');
-        console.log(tooltips);
         _.each(tooltips,function(tooltip){
             new Tooltip(tooltip);
         });

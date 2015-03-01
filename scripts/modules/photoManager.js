@@ -39,13 +39,13 @@ define(['px500', 'underscore'], function(px500, _) {
 
     // default 500px obj
     var defaultPx500 = {
-        photo: '../../assets/images/bg.jpg',
-        userPage: 'https://500px.com/g-les',
-        link: 'https://500px.com/photo/90731813/abstract-painting-by-gilles-baechler',
-        description: 'Aerial shot of the countryside around Fribourg during the fall season - Switzerland',
-        tags: 'abstract,colors,ountryside,fields'.split(','),
-        name: 'Abstract painting?',
-        username: 'Gilles Baechler',
+        photo: '../../assets/images/bg.png',
+        userPage: 'https://500px.com/MeerSadi',
+        link: 'https://500px.com/photo/100276985/cloud-atlas-by-meer-sadi',
+        description: 'Two fishermen going home during the twilight .',
+        tags: 'colorful,clouds,boat,beautiful bangladesh'.split(','),
+        name: 'Cloud Atlas',
+        username: 'Meer Sadi',
         index: -1,
         page: 1,
         isView: false
@@ -62,7 +62,7 @@ define(['px500', 'underscore'], function(px500, _) {
         this.status = STATUS.IDLE;
         this.retry = 0;
         if (!localStorage.getItem('feature') && !localStorage.getItem('term')) {
-            this.setTerm();
+            this.setFeature();
             this.mark();
         }
     }
@@ -180,7 +180,7 @@ define(['px500', 'underscore'], function(px500, _) {
                 download(photo);
             }
         });
-    };
+    }
 
     /**
      *
@@ -196,7 +196,7 @@ define(['px500', 'underscore'], function(px500, _) {
 
         photoManager.status = STATUS.DOWNLOADING;
 
-        var image = document.getElementById('img');
+        var image = document.createElement('img');
 
         image.onload = function() {
 
@@ -253,7 +253,7 @@ define(['px500', 'underscore'], function(px500, _) {
         };
         image.src = photo.image_url;
 
-    };
+    }
 
     /**
      *

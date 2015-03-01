@@ -3,7 +3,7 @@
 
   "name": "Tabicture",
   "description": "Chrome new tab extension, ",
-  "version": "1.0",
+  "version": "0.1",
 
   "permissions": [
     "tabs",

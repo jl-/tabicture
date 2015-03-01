@@ -1,4 +1,3 @@
-;
 requirejs.config({
     baseUrl: 'scripts',
     paths: {
@@ -110,7 +109,7 @@ requirejs(['photoManager', 'underscore','Tooltip'], function(photoManager,  _, T
         var termInput = px500SettingPanel.querySelector('.term-input');
 
         // set feature or term
-        if (photoMetas.term) {
+        if (photoMetas.term && photoMetas.term !== 'null') {
             termInput.value = photoMetas.term;
         } else if (photoMetas.feature) {
             var features = px500SettingPanel.querySelectorAll('.feature');
@@ -170,7 +169,9 @@ requirejs(['photoManager', 'underscore','Tooltip'], function(photoManager,  _, T
         });
         tack();
 
+        Tooltip.init();
         Tooltip.make(px500TackBtn);
+
 
         termInput.addEventListener('keyup', function(event) {
             if (event.keyCode === 13) {
